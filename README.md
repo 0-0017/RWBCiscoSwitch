@@ -9,9 +9,9 @@ This project was developed for my **previous employer** to automate network mana
 - Securely handling user credentials.  
 
 ### Notes:
-**Tested on Windows only!**
-**Credentials Modified For Safety & Privacy!**
-**Simple Script Used For One Specific Task, With Potential For Improvement & Scalabiliy!**
+- **Tested on Windows only!**
+- **Credentials Modified For Safety & Privacy!**
+- **Simple Script Used For One Specific Task, With Potential For Improvement & Scalabiliy!**
 
 ---
 
