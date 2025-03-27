@@ -1,17 +1,86 @@
-# RWBCiscoSwitch
-Network Automation Project Overview This project aims to automate various network management tasks using the Netmiko Python library. The current functionality allows users to:
+# RWBCiscoSwitch  
 
-Check the status of network interfaces. Bring specific ports down and up on a schedule. Perform a ping test to a specified network. Securely handle user credentials. Functionalities
+## Network Automation Project Overview  
+This project was developed for my **previous employer** to automate network management tasks on Cisco switches using the Netmiko Python library. It provides functionalities for:  
 
-Check Status of Interfaces The script connects to a Cisco IOS device and retrieves the status of all network interfaces using the show ip interface brief command. The output is printed to the console.
+- Checking the status of network interfaces.  
+- Bringing specific ports down and up on a schedule.  
+- Performing a ping test to a specified network.  
+- Securely handling user credentials.  
 
-Shut Down / Bring Up Ports The script can manage the state of specific network interfaces. It performs the following actions:
+**Tested on Windows only.**  
 
-Brings a specified range of ports down using the shutdown command. Brings a specified range of ports up using the no shutdown command. Both actions are executed in configuration mode and the results are printed to the console. Detailed Logic: Shutdown Ports 1-18 on All Devices
+---
 
-Connect to each device. Shut down ports 1-18. Wait for 30 minutes before proceeding to the next device. Bring Up Ports in Intervals
+## Table of Contents  
+- [Features](#features)  
+  - [Check Status of Interfaces](#check-status-of-interfaces)  
+  - [Shut Down / Bring Up Ports](#shut-down--bring-up-ports)  
+  - [Ping Test](#ping-test)  
+  - [Secure Credential Handling](#secure-credential-handling)  
+- [Script Structure](#script-structure)  
+- [Installation & Setup](#installation--setup)  
+- [Usage](#usage)  
 
-Connect to each device. Bring up ports 1-8. Wait for 4 minutes. Bring up ports 9-18. Disconnect from the device. 3. Ping Test The script performs a ping test to a specified network (e.g., 8.8.8.8). The result of the ping test is printed to the console.
+---
 
-Secure Credential Handling The script uses the getpass library to securely prompt the user for their password when establishing a connection to the network device.
-Script Structure Initialization: Define device connection details and instantiate the NetworkManager class. Define Devices and Ports: Initialize devices and ports. Shutdown Ports: Connect to each device. Shut down ports 1-18. Wait for 30 minutes. Bring Up Ports: Connect to each device. Bring up ports 1-8. Wait for 4 minutes. Bring up ports 9-18. Disconnect from the device. Disconnect: Ensure all devices are disconnected after operations are complete.
+## Features  
+
+### Check Status of Interfaces  
+The script connects to a Cisco IOS device and retrieves the status of all network interfaces using the `show ip interface brief` command. The output is printed to the console.  
+
+### Shut Down / Bring Up Ports  
+The script manages the state of specific network interfaces using:  
+
+- `shutdown` command to disable ports.  
+- `no shutdown` command to re-enable ports.  
+
+**Detailed Logic:**  
+1. Shut down **ports 1-18** on all devices.  
+   - Connect to each device.  
+   - Shut down ports 1-18.  
+   - Wait for **30 minutes** before proceeding to the next device.  
+2. Bring up ports in intervals:  
+   - Connect to each device.  
+   - Bring up **ports 1-8** → Wait **4 minutes**.  
+   - Bring up **ports 9-18** → Wait **4 minutes**.  
+   - Disconnect from the device.  
+
+### Ping Test  
+The script performs a ping test to a specified network (default: `8.8.8.8`). The result is printed to the console.  
+
+### Secure Credential Handling  
+The script uses the `getpass` library to securely prompt for user credentials when establishing a connection to the network device.  
+
+---
+
+## Script Structure  
+1. **Initialization:** Define device connection details and instantiate the `NetworkManager` class.  
+2. **Define Devices & Ports:** Initialize devices and interfaces.  
+3. **Shutdown Ports:**  
+   - Connect to each device.  
+   - Shut down **ports 1-18**.  
+   - Wait **30 minutes**.  
+4. **Bring Up Ports:**  
+   - Connect to each device.  
+   - Bring up **ports 1-8**, wait **4 minutes**.  
+   - Bring up **ports 9-18**, wait **4 minutes**.  
+   - Disconnect.  
+
+---
+
+## Installation & Setup  
+### Prerequisites  
+Ensure you have Python installed on your system. Then, install the required dependencies:  
+
+```sh
+pip install -r requirements.txt
+
+### Requirements:
+  - netmiko
+  - requests
+  - pyinstaller
+
+## Usage
+```sh
+python main.py
