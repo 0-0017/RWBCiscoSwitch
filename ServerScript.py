@@ -3,9 +3,9 @@ import time
 
 # Define device connection details
 device_type = ['cisco_ios', 'cisco_ios', 'cisco_ios', 'cisco_ios', 'cisco_ios']
-hosts = ['172.25.0.133', '172.25.0.132', '172.25.0.134', '172.25.0.136', '172.25.0.137']
-username = 'lperpall'
-password = '$#P@$$w0rd1'
+hosts = ['172.25.0.0', '172.25.0.0', '172.25.0.0', '172.25.0.0', '172.25.0.0']
+username = 'user'
+password = 'pass'
 numDevices = len(hosts)
 intrfaceName = 'GigabitEthernet1/0/'
 numPorts = 18
