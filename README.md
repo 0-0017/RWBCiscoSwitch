@@ -10,7 +10,7 @@ This project was developed for my **previous employer** to automate network mana
 
 ### Notes:
 - **Tested on Windows only!**
-- **Credentials Modified For Safety & Privacy!**
+- **Credentials & IPs Modified For Safety & Privacy!**
 - **Simple Script Used For One Specific Task, With Potential For Improvement & Scalabiliy!**
 
 ---
