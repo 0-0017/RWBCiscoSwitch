@@ -8,7 +8,10 @@ This project was developed for my **previous employer** to automate network mana
 - Performing a ping test to a specified network.  
 - Securely handling user credentials.  
 
-**Tested on Windows only.**  
+### Notes:
+**Tested on Windows only!**
+**Credentials Modified For Safety & Privacy!**
+**Simple Script Used For One Specific Task, With Potential For Improvement & Scalabiliy!**
 
 ---
 
